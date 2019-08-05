@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>麵包網頁</title>
+    <link href="style/login.css" rel="stylesheet" type="text/css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css'/>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/header.css">
+   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-12/css/all.min.css'/>
+   <link rel="stylesheet" href="style/content.css">
+</head>
+<body>
+<div id="app">
+<div class="header">
+    <div class="header_wrap">
+        <div class="logo"><img src="img/logo.PNG" alt="logo"><span>free food</span></div>
+        <nav class="header_menu">
+            <a v-for="list in listname">{{list}}</a>
+        </nav>
+        <div class="header_button">
+        <a href="#"><i class="fas fa-user"></i></a>
+        <a href="#"><i class="fas fa-search"></i></a>
+        </div>
+        <div class="menubt"><i class="fas fa-bars"></i></div>
+    </div>
+</div>
+<div class="swiper-container">
+        <div class="swiper-wrapper">
+        <div class="header_background swiper-slide"><img src="img/bread_background.jpg" alt=""></div>
+        <div class="header_background swiper-slide"><img src="img/bread_background2.jpg" alt=""></div>
+        <div class="header_background swiper-slide"><img src="img/bread_background3.jpg" alt=""></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+</div>
+
+<div id="midle_content">
+    <div class="content_wrap" v-for="(bread,index) in breads" v-if="index>=(pageindex-1)*pagenum&&index<pageindex*pagenum">
+        <div class="contents">
+            <div class="img_contet">
+            <i class="fas fa-search"></i>
+            <img src="https://picsum.photos/200/300?random=1" :src="bread.src">
+            </div>
+            <h1>{{bread.name}}</h1>
+            <h2>${{bread.price}}</h2>
+        </div>
+    </div>
+</div>
+    <ul class="listitem text_middle">
+    <li v-for='page in getpage' @click="setpage(page)">{{page}}</li>
+    </ul>
+<div id="logowrap" style="display: none">
+    <form  class="loginform" method="POST" action="https://abc.com">
+        <div class="loginlist">
+        <ul>
+        <li class="logoactive">登入</li>
+        <li>注冊</li>
+        </ul>
+        </div>
+        <div class="loginbody">
+        <input class="login_bt" type="text" name="account" placeholder="請輸入登入帳號">
+        <p class="checkword checkworderror" data-error="請輸入正確帳號"></p>
+        <div class="password_bt">
+        <input class="login_bt" type="password" name="password" placeholder="請輸入登入密碼">
+        <p class="checkword" data-error="請輸入正確密碼"></p>
+        <i class="fas fa-eye"></i>
+        <!-- <i class="fas fa-eye-slash"></i> -->
+        </div>
+        <input   class="login_bt submit_bt" type="submit" name="submit" value="登入">
+    </div>
+    </form>
+</div>
+<div class="footer">
+    <div class="footerlogo"><img src="img/logo.PNG" alt="logo"><span>free food</span></div>
+    <div class="infowrap">
+        <div class="address"><h1>總公司地址</h1><p>新北市土城區中山路1323號
+                客服專線：12134-231-116</p></div>
+        <div class="company"><h1>bread食品股份有限公司</h1><p>Copyrisadght©2018 
+                Free Merry Foods,Co.,Ltd.Setup</p></div>
+        <div class="time"><h1>上班時間</h1><p>週一~週五 08:30~17:30
+                週六、週日休息</p></div>
+    </div>        
+</div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js'></script>
+<script src="script/vuedata.js"></script>
+<script src="script/login.js"></script>
+</body>
+</html>

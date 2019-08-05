@@ -1,0 +1,117 @@
+.login_bt
+{
+    display: block;
+    
+    border: 1px solid #f0f0f0;
+    padding: 5px;
+    width: 100%;
+    background: #fefefe;
+    box-sizing: border-box;
+    height: 40px;
+    border-radius: 5px;
+
+}
+.checkword
+{
+    color: transparent;
+    padding: 0px;
+    margin: 0;
+    font-size: 10px;
+    height: 15px;
+    margin: 5px 0px 10px;
+    padding-left:10px; 
+}
+.checkworderror
+{
+    color:red;
+}
+.logoactive
+{
+    color:red;
+}
+.logoactive::after
+{
+    content: '';
+    display: block;
+    background-color: red;
+    width: 10px;
+    height: 2px;
+    margin: 0 auto;
+}
+.password_bt
+
+{
+    position: relative;
+}
+.password_bt i
+{
+
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 7.5px);
+  cursor: pointer;
+  transform: translate(0,-50%);
+
+}
+.submit_bt
+{
+    background: red;
+    color:white;
+    border: 1px solid red;
+}
+#logowrap
+{
+  position: absolute;
+  left: 50%;
+  top:50%;
+  background-color: white;
+  width: 384px;
+  height: 340px;
+ transform: translate(-50%,-50%);
+ border-radius: 10px;
+  
+}
+.loginlist
+{
+    padding: 20px 0px 20px 40px;
+    height: 100px;
+    box-sizing: border-box;
+}
+.loginlist ul
+{
+    list-style: none;
+    padding:0;
+    margin: 0;
+}
+.loginlist ul li
+{
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    padding: 10px 0px;
+    line-height: 40px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+.loginlist ul li:hover
+{
+
+    color: red;
+
+}
+.loginlist ul li:hover::after
+{
+    content: '';
+    display: block;
+    background-color: red;
+    width: 10px;
+    height: 2px;
+    margin: 0 auto;
+}
+.loginbody
+{
+    padding: 0px 30px;
+    box-sizing: border-box;
+}
